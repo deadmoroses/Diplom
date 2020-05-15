@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace SchoolCanteen
+{
+    static class Behavior
+    {
+        /// <summary>
+        /// Подсвечивает дезеным строки в dataGridView, которые содержат символы из searchBox
+        /// </summary>
+        public static void LightRowsForSearch(DataGridView dataGridView, TextBox searchBox)
+        {
+            ClearColor(dataGridView);
+
+            for (int i = 0; i < dataGridView.RowCount; i++)
+            {
+                dataGridView.Rows[i].Selected = false;
+                for (int j = 0; j < dataGridView.ColumnCount; j++)
+                    if (dataGridView.Rows[i].Cells[j].Value != null)
+                        if (dataGridView.Rows[i].Cells[j].Value.ToString().Contains(searchBox.Text))
+                        {
+                            dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
+                            break;
+                        }
+            }
+            if (searchBox.Text == "") ClearColor(dataGridView);
+        }
+
+        private static void ClearColor(DataGridView dataGridView1)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+                row.DefaultCellStyle.BackColor = Color.White;
+        }
+
+        /// <summary>
+        /// Сбрасывает значение searchBox
+        /// </summary>
+        public static void ResetEnterText(TextBox searchBox)
+        {
+            if (searchBox.Text == "") { searchBox.Text = "Поиск...";  searchBox.ForeColor = Color.Gray; }
+        }
+
+        /// <summary>
+        /// Готовит searchBox для ввода
+        /// </summary>
+        public static void PrepareForEnterText(TextBox searchBox)
+        {
+            if (searchBox.ForeColor == Color.Gray) { searchBox.Text = ""; searchBox.ForeColor = Color.Black; }
+        }
+    }
+}

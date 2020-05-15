@@ -1,0 +1,14 @@
+E:\diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.csprojAssemblyReference.cache
+E:\diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.Properties.Resources.resources
+E:\diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.csproj.GenerateResource.cache
+E:\diplom\SchoolCanteen\SchoolCanteen\bin\Debug\SchoolCanteen.exe.config
+E:\diplom\SchoolCanteen\SchoolCanteen\bin\Debug\SchoolCanteen.exe
+E:\diplom\SchoolCanteen\SchoolCanteen\bin\Debug\SchoolCanteen.pdb
+E:\diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.exe
+E:\diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.pdb
+E:\diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.NewConnection.resources
+E:\diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.StartForm.resources
+E:\diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.Admin.resources
+E:\diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.Teacher.resources
+E:\diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.Worker.resources
+E:\diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.AddUser.resources
