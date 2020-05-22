@@ -19,7 +19,6 @@ namespace SchoolCanteen
 
             for (int i = 0; i < dataGridView.RowCount; i++)
             {
-                dataGridView.Rows[i].Selected = false;
                 for (int j = 0; j < dataGridView.ColumnCount; j++)
                     if (dataGridView.Rows[i].Cells[j].Value != null)
                         if (dataGridView.Rows[i].Cells[j].Value.ToString().Contains(searchBox.Text))
@@ -27,6 +26,16 @@ namespace SchoolCanteen
                             dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
                             break;
                         }
+            }
+            if (searchBox.Text == "") ClearColor(dataGridView);
+        }
+
+        public static void DelRowsForSearch(DataGridView dataGridView, TextBox searchBox, string header)
+        {
+            for (int i = 0; i < dataGridView.RowCount; i++)
+            {
+                dataGridView.CurrentCell = null;
+                if (dataGridView.Rows[i].Cells[header].Value.ToString() != searchBox.Text) dataGridView.Rows[i].Visible = false;
             }
             if (searchBox.Text == "") ClearColor(dataGridView);
         }
