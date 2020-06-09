@@ -27,6 +27,8 @@ namespace SchoolCanteen.UserControls
             teacherBox.DataSource = DBGate.GetColumnFromDB(Properties.Settings.Default.ConnectionString, "select login from Users where role = 3");
             yearBox.DataSource = DBGate.GetColumnFromDB(Properties.Settings.Default.ConnectionString, "select name from Years where ID <> '12'");
             classBox.DataSource = DBGate.GetColumnFromDB(Properties.Settings.Default.ConnectionString, "select name from Classes");
+            teachersList.DataSource = DBGate.GetColumnFromDB(Properties.Settings.Default.ConnectionString, 
+                "select login from Users where role = '3' and (select count (*) from Teachers where Teachers.userID = Users.ID) = 0");
 
             string query = 
                 "select " +

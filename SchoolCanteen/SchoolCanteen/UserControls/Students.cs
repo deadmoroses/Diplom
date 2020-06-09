@@ -17,15 +17,8 @@ namespace SchoolCanteen.UserControls
             InitializeComponent();
             Start();
         }
-        private void Start()
-        {
-            searchBox.TextChanged += (s, a) => Behavior.LightRowsForSearch(dataGridView1, searchBox);
-            searchBox.Enter += (s, a) => Behavior.PrepareForEnterText(searchBox);
-            searchBox.Leave += (s, a) => Behavior.ResetEnterText(searchBox);
-            searchButton.Click += (s, a) => Behavior.DelRowsForSearch(dataGridView1, searchBox, comboBox1.Text);
 
-            Behavior.ResetEnterText(searchBox);
-            string query = "select ID as 'ID', " +
+        public string query = "select ID as 'ID', " +
                 "name as 'Имя', " +
                 "birth as 'Дата рождения', " +
                 "year as 'Год обучения', " +
@@ -34,6 +27,15 @@ namespace SchoolCanteen.UserControls
                 "activeFlag as 'Питание' " +
                 "from Students " +
                 "where year <> 12";
+        public void Start()
+        {
+            searchBox.TextChanged += (s, a) => Behavior.LightRowsForSearch(dataGridView1, searchBox);
+            searchBox.Enter += (s, a) => Behavior.PrepareForEnterText(searchBox);
+            searchBox.Leave += (s, a) => Behavior.ResetEnterText(searchBox);
+            searchButton.Click += (s, a) => Behavior.DelRowsForSearch(dataGridView1, searchBox, comboBox1.Text);
+
+            Behavior.ResetEnterText(searchBox);
+            
             DataSet ds = DBGate.GetFilledDataSet(Properties.Settings.Default.ConnectionString, query);
             dataGridView1.DataSource = ds.Tables[0];
 

@@ -31,6 +31,7 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.deleteCurrentRow = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.OK = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,8 +39,8 @@
             this.classBox = new System.Windows.Forms.ComboBox();
             this.teacherBox = new System.Windows.Forms.ComboBox();
             this.yearBox = new System.Windows.Forms.ComboBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.deleteCurrentRow = new System.Windows.Forms.Button();
+            this.teachersList = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -88,6 +89,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(442, 515);
             this.panel4.TabIndex = 9;
+            // 
+            // deleteCurrentRow
+            // 
+            this.deleteCurrentRow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteCurrentRow.Location = new System.Drawing.Point(0, 476);
+            this.deleteCurrentRow.Name = "deleteCurrentRow";
+            this.deleteCurrentRow.Size = new System.Drawing.Size(442, 32);
+            this.deleteCurrentRow.TabIndex = 9;
+            this.deleteCurrentRow.Text = "Снять руководство";
+            this.deleteCurrentRow.UseVisualStyleBackColor = true;
+            this.deleteCurrentRow.Click += new System.EventHandler(this.deleteCurrentRow_Click);
             // 
             // groupBox1
             // 
@@ -161,31 +174,32 @@
             this.yearBox.Size = new System.Drawing.Size(53, 24);
             this.yearBox.TabIndex = 3;
             // 
-            // listBox1
+            // teachersList
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(228, 164);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 340);
-            this.listBox1.TabIndex = 11;
+            this.teachersList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.teachersList.FormattingEnabled = true;
+            this.teachersList.ItemHeight = 16;
+            this.teachersList.Location = new System.Drawing.Point(4, 136);
+            this.teachersList.Name = "teachersList";
+            this.teachersList.Size = new System.Drawing.Size(344, 372);
+            this.teachersList.TabIndex = 11;
             // 
-            // deleteCurrentRow
+            // label3
             // 
-            this.deleteCurrentRow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteCurrentRow.Location = new System.Drawing.Point(0, 483);
-            this.deleteCurrentRow.Name = "deleteCurrentRow";
-            this.deleteCurrentRow.Size = new System.Drawing.Size(442, 32);
-            this.deleteCurrentRow.TabIndex = 9;
-            this.deleteCurrentRow.Text = "Снять руководство";
-            this.deleteCurrentRow.UseVisualStyleBackColor = true;
-            this.deleteCurrentRow.Click += new System.EventHandler(this.deleteCurrentRow_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(298, 16);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Преподаватели без классного руководства";
             // 
             // Teachers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.teachersList);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel4);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -198,6 +212,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -213,7 +228,8 @@
         private System.Windows.Forms.ComboBox teacherBox;
         private System.Windows.Forms.ComboBox yearBox;
         private System.Windows.Forms.Button OK;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox teachersList;
         private System.Windows.Forms.Button deleteCurrentRow;
+        private System.Windows.Forms.Label label3;
     }
 }

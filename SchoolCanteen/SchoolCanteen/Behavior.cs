@@ -8,10 +8,13 @@ using System.Windows.Forms;
 
 namespace SchoolCanteen
 {
+    /// <summary>
+    /// Поведение отдельных элементов управления
+    /// </summary>
     static class Behavior
     {
         /// <summary>
-        /// Подсвечивает дезеным строки в dataGridView, которые содержат символы из searchBox
+        /// Подсвечивает зеленым строки в dataGridView, которые содержат символы из searchBox
         /// </summary>
         public static void LightRowsForSearch(DataGridView dataGridView, TextBox searchBox)
         {
@@ -30,6 +33,9 @@ namespace SchoolCanteen
             if (searchBox.Text == "") ClearColor(dataGridView);
         }
 
+        /// <summary>
+        /// Фильтрует вывод в dataGridView по отдельному столбцу
+        /// </summary>
         public static void DelRowsForSearch(DataGridView dataGridView, TextBox searchBox, string header)
         {
             for (int i = 0; i < dataGridView.RowCount; i++)
@@ -40,6 +46,9 @@ namespace SchoolCanteen
             if (searchBox.Text == "") ClearColor(dataGridView);
         }
 
+        /// <summary>
+        /// Возвращает цвет строк в dataGrigView на стандартный
+        /// </summary>
         private static void ClearColor(DataGridView dataGridView1)
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)

@@ -69,7 +69,16 @@ namespace SchoolCanteen
                     break;
                 case "1": new Admin(id).Show(); break;
                 case "2": new Worker(id).Show(); break;
-                case "3": new Teacher(id).Show(); break;
+                case "3":
+                    string query = 
+                        $"select count(*) from Teachers where userID = N'{id}'";
+                    if (DBGate.Scalar(Properties.Settings.Default.ConnectionString, query) != "0") { new Teacher(id).Show(); break; }
+                    else
+                    {
+                        MessageBox.Show("Вы не являетесь классным руководителем, данный функционал вам не доступен. Обратитесь к администратору, если это не так.");
+                        this.Show();
+                        break;
+                    }
             }
         }
 
