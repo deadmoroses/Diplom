@@ -30,9 +30,8 @@
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.salutationLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ClassPage = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -59,17 +58,6 @@
             this.salutationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.salutationLabel.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.ClassPage);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(784, 539);
-            this.tabControl1.TabIndex = 2;
-            // 
             // ClassPage
             // 
             this.ClassPage.Location = new System.Drawing.Point(4, 25);
@@ -80,15 +68,15 @@
             this.ClassPage.Text = "Класс";
             this.ClassPage.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabControl1
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 71);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabControl1.Controls.Add(this.ClassPage);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(784, 539);
+            this.tabControl1.TabIndex = 2;
             // 
             // Teacher
             // 
@@ -99,7 +87,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Teacher";
             this.Text = "Учитель";
@@ -116,8 +104,7 @@
 
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel salutationLabel;
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage ClassPage;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }

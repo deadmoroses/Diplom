@@ -91,6 +91,22 @@ namespace SchoolCanteen
         }
 
         /// <summary>
+        /// Получает логин пользователя для отчета
+        /// </summary>
+        public static string GetLoginUser(string connectionString, string id)
+        {
+            return Scalar(connectionString, $"select login from Users where ID = {id}");
+        }
+
+        /// <summary>
+        /// Получает имя пользователя для отчета
+        /// </summary>
+        public static string GetNameUser(string connectionString, string id)
+        {
+            return Scalar(connectionString, $"select name from Users where ID = {id}");
+        }
+
+        /// <summary>
         /// Выполняет запрос и заполняет dataset, для заполнения datagridview
         /// </summary>
         public static DataSet GetFilledDataSet(string connectionString, string query)

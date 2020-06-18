@@ -31,3 +31,5 @@ E:\DiplomProject\Diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.User
 E:\DiplomProject\Diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.AddStudent.resources
 E:\DiplomProject\Diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.UserControls.Teachers.resources
 E:\DiplomProject\Diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.UserControls.Reports.resources
+E:\DiplomProject\Diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.csproj.ResolveComReference.cache
+E:\DiplomProject\Diplom\SchoolCanteen\SchoolCanteen\obj\Debug\SchoolCanteen.PreviewReports.resources

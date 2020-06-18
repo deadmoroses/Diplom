@@ -42,7 +42,7 @@
             this.loginBox.Name = "loginBox";
             this.loginBox.Size = new System.Drawing.Size(221, 22);
             this.loginBox.TabIndex = 0;
-            this.loginBox.Text = "admin";
+            this.loginBox.Text = "worker1";
             this.loginBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginBox_KeyPress);
             // 
             // passwordBox
