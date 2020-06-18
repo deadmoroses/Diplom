@@ -81,24 +81,28 @@ namespace SchoolCanteen.UserControls
 
         void SaveFile(PreviewReports preview)
         {
-            string fileCSV = "";
-            for (int i = 0; i < (preview.Controls["dataGridView1"] as DataGridView).RowCount - 1; i++)
+            try
             {
-                for (int j = 0; j < (preview.Controls["dataGridView1"] as DataGridView).ColumnCount; j++)
+                string fileCSV = "";
+                for (int i = 0; i < (preview.Controls["dataGridView1"] as DataGridView).RowCount - 1; i++)
                 {
-                    fileCSV += ((preview.Controls["dataGridView1"] as DataGridView)[j, i].Value).ToString() + ";";
+                    for (int j = 0; j < (preview.Controls["dataGridView1"] as DataGridView).ColumnCount; j++)
+                    {
+                        fileCSV += ((preview.Controls["dataGridView1"] as DataGridView)[j, i].Value).ToString() + ";";
+                    }
+                    fileCSV += "\t\n";
                 }
-                fileCSV += "\t\n";
+
+                if (!Directory.Exists("reports")) { Directory.CreateDirectory("reports"); }
+
+                StreamWriter wr = new StreamWriter($"reports\\{DateTime.Today.Day}.{DateTime.Today.Month}.{DateTime.Today.Year}_" +
+                    $"{DateTime.Now.TimeOfDay.ToString().Substring(0, 2)}-{DateTime.Now.TimeOfDay.ToString().Substring(3, 2)}-{DateTime.Now.TimeOfDay.ToString().Substring(6, 2)}.csv",
+                    false,
+                    Encoding.GetEncoding("windows-1251"));
+                wr.Write(fileCSV);
+                wr.Close();
             }
-
-            if (!Directory.Exists("reports")) { Directory.CreateDirectory("reports"); }
-
-            StreamWriter wr = new StreamWriter($"reports\\{DateTime.Today.Day}.{DateTime.Today.Month}.{DateTime.Today.Year}_" +
-                $"{DateTime.Now.TimeOfDay.ToString().Substring(0, 2)}-{DateTime.Now.TimeOfDay.ToString().Substring(3, 2)}-{DateTime.Now.TimeOfDay.ToString().Substring(6, 2)}.csv", 
-                false, 
-                Encoding.GetEncoding("windows-1251"));
-            wr.Write(fileCSV);
-            wr.Close();
+            catch (IOException ex) { MessageBox.Show(ex.Message, "Ошибка ввода-вывода", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private List<ReportRow> GetReport()
@@ -143,9 +147,13 @@ namespace SchoolCanteen.UserControls
 
         void GetFileExists()
         {
-            if (!Directory.Exists("reports")) { Directory.CreateDirectory("reports"); }
-            listBox1.Items.Clear();
-            listBox1.Items.AddRange(Directory.GetFiles("reports", "*.csv", SearchOption.TopDirectoryOnly));
+            try
+            {
+                if (!Directory.Exists("reports")) { Directory.CreateDirectory("reports"); }
+                listBox1.Items.Clear();
+                listBox1.Items.AddRange(Directory.GetFiles("reports", "*.csv", SearchOption.TopDirectoryOnly));
+            }
+            catch (IOException ex) { MessageBox.Show(ex.Message, "Ошибка ввода-вывода", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private void button1_Click(object sender, EventArgs e)
