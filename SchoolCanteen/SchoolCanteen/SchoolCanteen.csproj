@@ -65,6 +65,7 @@
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Behavior.cs" />
+    <Compile Include="CsvParser.cs" />
     <Compile Include="GateDB.cs" />
     <Compile Include="NewConnection.cs">
       <SubType>Form</SubType>
@@ -79,6 +80,12 @@
       <DependentUpon>PreviewReports.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportRow.cs" />
+    <Compile Include="ShowCsvFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowCsvFile.Designer.cs">
+      <DependentUpon>ShowCsvFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="StartForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PreviewReports.resx">
       <DependentUpon>PreviewReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowCsvFile.resx">
+      <DependentUpon>ShowCsvFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>

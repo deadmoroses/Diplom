@@ -64,9 +64,19 @@ namespace SchoolCanteen.UserControls
             {
                 PreviewReports preview = new PreviewReports(GetReport());
                 preview.ShowDialog();
-                if (preview.DialogResult == DialogResult.OK) { SaveFile(preview); Start(); }
+                if (preview.DialogResult == DialogResult.OK) { SetNewPaySumm(); SaveFile(preview); Start(); }
             }
             else { MessageBox.Show("Нужно выбрать классы.\r\nНельзя создать пустой отчет.", "Ошибка"); }
+        }
+
+        void SetNewPaySumm()
+        {
+            string query = "";
+            foreach(CheckBoxListItem item in classes.CheckedItems)
+            {
+                query = $"update Students set paySumm = paySumm + {numericUpDown1.Value} where year = '{item.Year}'";
+                DBGate.NonQuery(Properties.Settings.Default.ConnectionString, query);
+            }
         }
 
         void SaveFile(PreviewReports preview)
@@ -95,6 +105,7 @@ namespace SchoolCanteen.UserControls
         {
             List<ReportRow> report = new List<ReportRow>();
 
+            report.Add(new ReportRow());
             report.Add(new ReportRow(
                 "Дата: ", $"{DateTime.Today.Day}.{DateTime.Today.Month}.{DateTime.Today.Year}", ""
                 ));
@@ -135,6 +146,37 @@ namespace SchoolCanteen.UserControls
             if (!Directory.Exists("reports")) { Directory.CreateDirectory("reports"); }
             listBox1.Items.Clear();
             listBox1.Items.AddRange(Directory.GetFiles("reports", "*.csv", SearchOption.TopDirectoryOnly));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem != null)
+            {
+                if (File.Exists(listBox1.SelectedItem.ToString()))
+                    new ShowCsvFile(listBox1.SelectedItem.ToString()).ShowDialog();
+                else GetFileExists();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem != null)
+            {
+                try
+                {
+                    if (File.Exists(listBox1.SelectedItem.ToString()))
+                    {
+                        DialogResult dr = new DialogResult();
+                        dr = MessageBox.Show("Вы уверены что хотите удалить отчет?", "Необратимое действие", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dr == DialogResult.Yes) File.Delete(listBox1.SelectedItem.ToString());
+                    }
+                    GetFileExists();
+                }
+                catch(IOException ex) 
+                { 
+                    MessageBox.Show(ex.Message, "Ошибка ввода-вывода", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                }
+            }
         }
     }
 }

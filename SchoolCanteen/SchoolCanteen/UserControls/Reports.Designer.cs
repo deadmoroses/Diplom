@@ -37,6 +37,8 @@
             this.createReport = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -74,7 +76,7 @@
             0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(54, 22);
-            this.numericUpDown1.TabIndex = 5;
+            this.numericUpDown1.TabIndex = 0;
             this.numericUpDown1.Value = new decimal(new int[] {
             50,
             0,
@@ -118,7 +120,7 @@
             this.classes.Location = new System.Drawing.Point(6, 111);
             this.classes.Name = "classes";
             this.classes.Size = new System.Drawing.Size(226, 429);
-            this.classes.TabIndex = 2;
+            this.classes.TabIndex = 1;
             // 
             // createReport
             // 
@@ -127,29 +129,59 @@
             this.createReport.Location = new System.Drawing.Point(7, 546);
             this.createReport.Name = "createReport";
             this.createReport.Size = new System.Drawing.Size(225, 40);
-            this.createReport.TabIndex = 1;
+            this.createReport.TabIndex = 2;
             this.createReport.Text = "Создать отчет";
             this.createReport.UseVisualStyleBackColor = true;
             this.createReport.Click += new System.EventHandler(this.createReport_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.listBox1);
             this.groupBox2.Location = new System.Drawing.Point(248, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(343, 594);
+            this.groupBox2.Size = new System.Drawing.Size(592, 594);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Уже имеющиеся отчеты";
             // 
             // listBox1
             // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(7, 22);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(330, 564);
             this.listBox1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(343, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(243, 40);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Просмотр выбранного отчета";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(344, 68);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(242, 40);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Удалить файл отчета";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Reports
             // 
@@ -181,5 +213,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
