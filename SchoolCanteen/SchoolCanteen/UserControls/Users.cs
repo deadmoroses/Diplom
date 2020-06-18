@@ -30,6 +30,7 @@ namespace SchoolCanteen.UserControls
                 "from Users";
             DataSet ds = DBGate.GetFilledDataSet(Properties.Settings.Default.ConnectionString, query);
             dataGridView1.DataSource = ds.Tables[0];
+            dataGridView1.Columns[0].Visible = false;
         }
 
         private void Users_Load(object sender, EventArgs e)

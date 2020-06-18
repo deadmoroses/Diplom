@@ -38,6 +38,7 @@ namespace SchoolCanteen.UserControls
             
             DataSet ds = DBGate.GetFilledDataSet(Properties.Settings.Default.ConnectionString, query);
             dataGridView1.DataSource = ds.Tables[0];
+            dataGridView1.Columns[0].Visible = false;
 
             comboBox1.Items.Clear();
             for (int i = 0; i < dataGridView1.ColumnCount; i++) { comboBox1.Items.Add(dataGridView1.Columns[i].HeaderText); }

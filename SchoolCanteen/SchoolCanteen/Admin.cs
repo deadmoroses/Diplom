@@ -29,6 +29,9 @@ namespace SchoolCanteen
             Teachers teachers = new Teachers { Dock = DockStyle.Fill };
             teachersTab.Controls.Add(teachers);
 
+            Reports reports = new Reports(id) { Dock = DockStyle.Fill };
+            reportsTab.Controls.Add(reports);
+
         }
 
         private void Admin_FormClosing(object sender, FormClosingEventArgs e)

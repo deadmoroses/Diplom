@@ -34,6 +34,7 @@
             this.usersTab = new System.Windows.Forms.TabPage();
             this.studentsTab = new System.Windows.Forms.TabPage();
             this.teachersTab = new System.Windows.Forms.TabPage();
+            this.reportsTab = new System.Windows.Forms.TabPage();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             this.tabControl1.Controls.Add(this.usersTab);
             this.tabControl1.Controls.Add(this.studentsTab);
             this.tabControl1.Controls.Add(this.teachersTab);
+            this.tabControl1.Controls.Add(this.reportsTab);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -102,6 +104,16 @@
             this.teachersTab.Text = "Классное руководство";
             this.teachersTab.UseVisualStyleBackColor = true;
             // 
+            // reportsPage
+            // 
+            this.reportsTab.Location = new System.Drawing.Point(4, 25);
+            this.reportsTab.Name = "reportsPage";
+            this.reportsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.reportsTab.Size = new System.Drawing.Size(776, 510);
+            this.reportsTab.TabIndex = 3;
+            this.reportsTab.Text = "Отчеты для столовой";
+            this.reportsTab.UseVisualStyleBackColor = true;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -134,5 +146,6 @@
         private System.Windows.Forms.TabPage usersTab;
         private System.Windows.Forms.TabPage studentsTab;
         private System.Windows.Forms.TabPage teachersTab;
+        private System.Windows.Forms.TabPage reportsTab;
     }
 }
